@@ -41,5 +41,21 @@ function removeStudent(){
 }
 
 function renderStudent(){
+    const studentContainer = document.querySelector(".student-container");
+    studentContainer.innerHTML = "";
 
+    studentArray.forEach((student) => {
+        const renderedStudent = `
+        <div class="student-details">
+            <p>${student.name}</p>
+            <p>${student.admission}</p>
+            <p>${student.dob}</p>
+            <button class = "remove-student">Remove Student</button>
+        </div>
+    `
+
+    studentContainer.innerHTML += renderedStudent
+    })
+    
 }
+renderStudent()

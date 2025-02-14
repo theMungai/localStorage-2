@@ -15,7 +15,7 @@ registerButton.addEventListener("click", () => {
     addStudent()
 })
 
-const studentArray = []
+const studentArray = JSON.parse(localStorage.getItem("students")) || []
 
 function addStudent(){
     let newStudent = new Student(studentName.value, admissionNumber.value,dateOfBirth.value);
@@ -30,6 +30,9 @@ function addStudent(){
     `;
 
     document.querySelector(".student-container").innerHTML += generatedStudent
+    studentArray.push(newStudent);
+    localStorage.setItem("students", JSON.stringify(studentArray))
+    
 
 }
 

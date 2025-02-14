@@ -1,0 +1,42 @@
+const studentName = document.querySelector(".student-name");
+const admissionNumber = document.querySelector(".student-admission");
+const dateOfBirth = document.querySelector(".birth-date");
+
+class Student{
+    constructor(name, admission,dob){
+        this.name = name;
+        this.admission = admission;
+        this.dob = dob;
+    }
+}
+
+const registerButton = document.querySelector(".register-student");
+registerButton.addEventListener("click", () => {
+    addStudent()
+})
+
+const studentArray = []
+
+function addStudent(){
+    let newStudent = new Student(studentName.value, admissionNumber.value,dateOfBirth.value);
+
+    let generatedStudent = `
+        <div class="student-details">
+            <p>${newStudent.name}</p>
+            <p>${newStudent.admission}</p>
+            <p>${newStudent.dob}</p>
+            <button class = "remove-student">Remove Student</button>
+        </div>
+    `;
+
+    document.querySelector(".student-container").innerHTML += generatedStudent
+
+}
+
+function removeStudent(){
+
+}
+
+function renderStudent(){
+
+}

@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>localStorage-2</title>
 </head>
+<style>
+    .student-container{
+        margin: 20px 0px;
+    }
+    .student-details{
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+</style>
 <body>
     <input type="text" class="student-name" placeholder="Student Name">
-    <input type="date" name="date" id="date" class="birth-date">
     <input type="number" class="student-admission" placeholder="Student Admission">
-    <button>Register Student</button>
+    <input type="date" name="date" id="date" class="birth-date">
+    <button class="register-student">Register Student</button>
+
+    <div class="student-container"></div>
+
     <script src="main.js"></script>
 </body>
 </html>

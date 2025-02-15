@@ -37,7 +37,8 @@ function addStudent(){
 }
 
 function removeStudent(){
-
+    studentArray
+    renderStudent()
 }
 
 function renderStudent(){

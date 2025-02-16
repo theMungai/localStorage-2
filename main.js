@@ -36,8 +36,9 @@ function addStudent(){
 
 }
 
-function removeStudent(){
-    studentArray
+function removeStudent(index){
+    studentArray.splice(index,1);
+    localStorage.setItem("students", JSON.stringify(studentArray))
     renderStudent()
 }
 
@@ -58,5 +59,12 @@ function renderStudent(){
     studentContainer.innerHTML += renderedStudent
     })
     
+    const removeBtn = document.querySelectorAll(".remove-student");
+    removeBtn.forEach((button) => {
+        button.addEventListener("click", () => {
+            const index = button.dataset.index 
+            removeStudent(index)
+        })
+    })
 }
 renderStudent()

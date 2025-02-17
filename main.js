@@ -33,7 +33,10 @@ function addStudent(){
     studentArray.push(newStudent);
     localStorage.setItem("students", JSON.stringify(studentArray))
     
-
+    // Clearing inputs after adding a student
+    studentName.value = ""
+    admissionNumber.value = ""
+    dateOfBirth.value = ""
 }
 
 function removeStudent(index){

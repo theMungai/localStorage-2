@@ -39,6 +39,13 @@ function addStudent(){
     dateOfBirth.value = ""
 }
 
+// Adding Student with an "Enter" button on keyboard
+dateOfBirth.addEventListener("keydown", (event) => {
+    if(event.key === "Enter"){
+        addStudent()
+    }
+})
+
 function removeStudent(index){
     studentArray.splice(index,1);
     localStorage.setItem("students", JSON.stringify(studentArray))

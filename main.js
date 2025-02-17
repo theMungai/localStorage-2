@@ -15,6 +15,14 @@ registerButton.addEventListener("click", () => {
     addStudent()
 })
 
+
+// Adding Student with an "Enter" button on keyboard
+dateOfBirth.addEventListener("keydown", (event) => {
+    if(event.key === "Enter"){
+        addStudent()
+    }
+})
+
 const studentArray = JSON.parse(localStorage.getItem("students")) || []
 
 function addStudent(){
@@ -39,13 +47,6 @@ function addStudent(){
     dateOfBirth.value = ""
 }
 
-// Adding Student with an "Enter" button on keyboard
-dateOfBirth.addEventListener("keydown", (event) => {
-    if(event.key === "Enter"){
-        addStudent()
-    }
-})
-
 function removeStudent(index){
     studentArray.splice(index,1);
     localStorage.setItem("students", JSON.stringify(studentArray))
@@ -56,13 +57,13 @@ function renderStudent(){
     const studentContainer = document.querySelector(".student-container");
     studentContainer.innerHTML = "";
 
-    studentArray.forEach((student) => {
+    studentArray.forEach((student,index) => {
         const renderedStudent = `
         <div class="student-details">
             <p>${student.name}</p>
             <p>${student.admission}</p>
             <p>${student.dob}</p>
-            <button class = "remove-student">Remove Student</button>
+            <button class = "remove-student" data-index = "${index}">Remove Student</button>
         </div>
     `
 
